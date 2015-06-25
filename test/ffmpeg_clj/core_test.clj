@@ -1,7 +1,6 @@
 (ns ffmpeg-clj.core-test
-  (:require [clojure.test :refer :all]
-            [ffmpeg-clj.core :refer :all]))
+  (:require [midje.sweet :refer :all]
+            [ffmpeg-clj.core :as ffmeg]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(fact "Finds ffmpeg version"
+      (ffmeg/version) => truthy)
